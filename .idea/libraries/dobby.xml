@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dobby">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/dev/customJars/dobby/v1.6/dobby.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
