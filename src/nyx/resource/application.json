@@ -1,10 +1,12 @@
 {
   "application": {
     "name": "Nyx",
-    "version": "1.0"
+    "version": "0.0"
   },
   "dobby": {
     "mode": "http",
+    "logLevel": "WARN",
+    "port": 5000,
     "staticContent": {
       "externalDocRoot": "/home/kilian/dev/customJars"
     }

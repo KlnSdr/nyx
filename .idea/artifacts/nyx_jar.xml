@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/nyx_jar</output-path>
     <root id="archive" name="nyx.jar">
       <element id="module-output" name="nyx" />
-      <element id="extracted-dir" path="$USER_HOME$/dev/customJars/dobby/v1.6/dobby.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/dev/customJars/dobby/v1.7/dobby.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
