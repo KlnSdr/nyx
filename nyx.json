@@ -1,0 +1,20 @@
+{
+  "remoteRepoUrl": "https://repo.klnsdr.com",
+  "project": {
+    "entry": "nyx.Main",
+    "name": "nyx",
+    "version": "1.1",
+    "group": "dobby",
+    "dependencies": [
+      {
+        "group": "dobby",
+        "name": "dobby",
+        "version": "1.7"
+      }
+    ]
+  },
+  "compiler": {
+    "version": "21"
+  },
+  "exclude": []
+}
