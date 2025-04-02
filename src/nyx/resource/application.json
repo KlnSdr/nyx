@@ -5,7 +5,7 @@
   },
   "dobby": {
     "mode": "http",
-    "logLevel": "DEBUG",
+    "logLevel": "WARN",
     "port": 5000,
     "staticContent": {
       "externalDocRoot": "/app/repo"
