@@ -9,7 +9,12 @@
       {
         "group": "dobby",
         "name": "dobby",
-        "version": "1.7"
+        "version": "2.0"
+      },
+      {
+        "group": "common",
+        "name": "html",
+        "version": "1.0"
       }
     ]
   },
