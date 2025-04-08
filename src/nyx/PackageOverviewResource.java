@@ -103,16 +103,13 @@ public class PackageOverviewResource {
     }
 
     private List<String> findFilesRelativeToRoot(String srcDirExtension) {
-        String srcDir = Config.getInstance().getString("dobby.staticContent.externalDocRoot") + srcDirExtension;
-        List<String> javaFiles;
+        final String srcDir = Config.getInstance().getString("dobby.staticContent.externalDocRoot") + srcDirExtension;
         try {
-            javaFiles = Files.walk(Paths.get(srcDir)).map(Path::toString).filter(path -> path.endsWith(".jar") || path.endsWith(".json")).map(path -> path.replace(srcDir, "")).collect(Collectors.toList());
+            return Files.walk(Paths.get(srcDir)).map(Path::toString).filter(path -> path.endsWith(".jar") || path.endsWith(".json")).map(path -> path.replace(srcDir, "")).collect(Collectors.toList());
         } catch (IOException e) {
             LOGGER.error("Failed to find source files");
             LOGGER.trace(e);
             return List.of();
         }
-
-        return javaFiles;
     }
 }

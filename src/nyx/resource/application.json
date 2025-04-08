@@ -1,14 +1,14 @@
 {
   "application": {
     "name": "Nyx",
-    "version": "1.2"
+    "version": "1.3"
   },
   "dobby": {
     "mode": "http",
     "logLevel": "DEBUG",
     "port": 5000,
     "staticContent": {
-      "externalDocRoot": "/app/repo"
+      "externalDocRoot": "/home/kilian/.nyx"
     }
   }
 }
