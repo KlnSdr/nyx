@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -73,6 +74,8 @@ public class PackageOverviewResource {
 
         final Ul artefactList = new Ul();
         doc.addChild(artefactList);
+
+        Collections.sort(files);
 
         for (String file : files) {
             final Li li = new Li("");
