@@ -8,13 +8,8 @@
     "dependencies": [
       {
         "group": "dobby",
-        "name": "dobby",
+        "name": "hades",
         "version": "2.1"
-      },
-      {
-        "group": "common",
-        "name": "html",
-        "version": "1.0"
       }
     ]
   },
