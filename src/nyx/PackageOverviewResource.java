@@ -5,6 +5,7 @@ import common.logger.Logger;
 import dobby.Config;
 import dobby.annotations.Get;
 import dobby.io.HttpContext;
+import dobby.io.response.ResponseCodes;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,15 +17,22 @@ import java.util.stream.Collectors;
 
 public class PackageOverviewResource {
     private static final Logger LOGGER = new Logger(PackageOverviewResource.class);
+    private static final String BASE_PATH = "/packages";
 
     @Get("/")
+    public void index(HttpContext context) {
+        context.getResponse().setHeader("Location", BASE_PATH + "/");
+        context.getResponse().setCode(ResponseCodes.PERMANENT_REDIRECT);
+    }
+
+    @Get(BASE_PATH)
     public void getPackageOverview(HttpContext context) {
         final List<String> files = findFiles().stream().map(file -> file.split("/")[1]).distinct().collect(Collectors.toList());
         context.getResponse().setBody(buildUi(new String[0], files).toHtml());
         context.getResponse().setHeader("Content-Type", "text/html");
     }
 
-    @Get("/{group}")
+    @Get(BASE_PATH + "/{group}")
     public void getPackageOverviewForGroup(HttpContext context) {
         final String group = context.getRequest().getParam("group");
 
@@ -33,7 +41,7 @@ public class PackageOverviewResource {
         context.getResponse().setHeader("Content-Type", "text/html");
     }
 
-    @Get("/{group}/{name}")
+    @Get(BASE_PATH + "/{group}/{name}")
     public void getPackageOverviewForGroupAndName(HttpContext context) {
         final String group = context.getRequest().getParam("group");
         final String name = context.getRequest().getParam("name");
@@ -43,7 +51,7 @@ public class PackageOverviewResource {
         context.getResponse().setHeader("Content-Type", "text/html");
     }
 
-    @Get("/{group}/{name}/{version}")
+    @Get(BASE_PATH + "/{group}/{name}/{version}")
     public void getPackageOverviewForGroupNameAndVersion(HttpContext context) {
         final String group = context.getRequest().getParam("group");
         final String name = context.getRequest().getParam("name");
@@ -59,7 +67,7 @@ public class PackageOverviewResource {
         doc.setTitle("nyx repo" + (currentLoc.length > 0 ? " - " + String.join(":", currentLoc) : ""));
 
         final Div navbar = new Div();
-        navbar.addChild(new Link("/", "Home"));
+        navbar.addChild(new Link(BASE_PATH + "/", "Home"));
 
         for (int i = 0; i < currentLoc.length; i++) {
             navbar.addChild(new Label(" / "));

@@ -1,7 +1,9 @@
 {
   "application": {
     "name": "Nyx",
-    "version": "1.3"
+    "version": "1.3",
+    "devMode": true,
+    "dbHost": "thot-container"
   },
   "dobby": {
     "mode": "http",
@@ -9,6 +11,29 @@
     "port": 5000,
     "staticContent": {
       "externalDocRoot": "/home/kilian/.nyx"
+    },
+    "session": {
+      "store": "hades.session.HadesSessionStore"
     }
+  },
+  "hades": {
+    "apidocs": {
+      "enabled": true,
+      "hideHadesRoutes": true
+    },
+    "disableWelcomeMessage": true,
+    "login": {
+      "tokenHeaderName": "Hades-Login-Token",
+      "maxAttempts": 5,
+      "lockDuration": 300000,
+      "redirect": {
+        "success": "/",
+        "successAdmin": "/hades/"
+      }
+    },
+    "unauthorizedRedirectTarget": "/hades/login",
+    "unauthorizedRedirectPaths": [
+    ],
+    "context": ""
   }
 }

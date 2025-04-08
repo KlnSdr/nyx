@@ -6,6 +6,8 @@ import dobby.annotations.Post;
 import dobby.io.HttpContext;
 import dobby.io.response.ResponseCodes;
 import dobby.util.json.NewJson;
+import hades.annotations.AuthorizedOnly;
+import hades.annotations.PermissionCheck;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -16,6 +18,8 @@ public class UploadResource {
     private static final Logger LOGGER = new Logger(UploadResource.class);
     private static final String srcDir = Config.getInstance().getString("dobby.staticContent.externalDocRoot");
 
+    @PermissionCheck
+    @AuthorizedOnly
     @Post(BASE_PATH)
     public void uploadArtifact(HttpContext context) {
         final NewJson body = context.getRequest().getBody();

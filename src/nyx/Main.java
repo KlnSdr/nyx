@@ -1,20 +1,9 @@
 package nyx;
 
-import dobby.Dobby;
-import dobby.DobbyEntryPoint;
+import hades.Hades;
 
-public class Main implements DobbyEntryPoint {
+public class Main extends Hades {
     public static void main(String[] args) {
-        Dobby.startApplication(Main.class);
-    }
-
-    @Override
-    public void preStart() {
-
-    }
-
-    @Override
-    public void postStart() {
-
+        new Main().startApplication(Main.class);
     }
 }
