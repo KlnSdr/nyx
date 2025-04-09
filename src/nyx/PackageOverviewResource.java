@@ -62,6 +62,17 @@ public class PackageOverviewResource {
         context.getResponse().setHeader("Content-Type", "text/html");
     }
 
+    @Get(BASE_PATH + "/{group}/{name}/{version}/{file}")
+    public void redirectToFile(HttpContext context) {
+        final String group = context.getRequest().getParam("group");
+        final String name = context.getRequest().getParam("name");
+        final String version = context.getRequest().getParam("version");
+        final String file = context.getRequest().getParam("file");
+
+        context.getResponse().setHeader("Location", "/" + group + "/" + name + "/" + version + "/" + file);
+        context.getResponse().setCode(ResponseCodes.PERMANENT_REDIRECT);
+    }
+
     private Document buildUi(String[] currentLoc, List<String> files) {
         final Document doc = new Document();
         doc.setTitle("nyx repo" + (currentLoc.length > 0 ? " - " + String.join(":", currentLoc) : ""));

@@ -10,7 +10,7 @@
     "logLevel": "DEBUG",
     "port": 5000,
     "staticContent": {
-      "externalDocRoot": "/home/kilian/.nyx"
+      "externalDocRoot": "/home/kilian/IdeaProjects/nyx/repo"
     },
     "session": {
       "store": "hades.session.HadesSessionStore"
