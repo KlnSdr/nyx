@@ -2,15 +2,15 @@
   "application": {
     "name": "Nyx",
     "version": "1.3",
-    "devMode": true,
+    "devMode": false,
     "dbHost": "thot-container"
   },
   "dobby": {
     "mode": "http",
-    "logLevel": "DEBUG",
+    "logLevel": "WARN",
     "port": 5000,
     "staticContent": {
-      "externalDocRoot": "/home/kilian/IdeaProjects/nyx/repo"
+      "externalDocRoot": "/app/repo"
     },
     "session": {
       "store": "hades.session.HadesSessionStore"
