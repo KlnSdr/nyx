@@ -3,13 +3,13 @@
   "project": {
     "entry": "nyx.Main",
     "name": "nyx",
-    "version": "1.3",
+    "version": "1.4",
     "group": "dobby",
     "dependencies": [
       {
         "group": "dobby",
         "name": "hades",
-        "version": "2.1"
+        "version": "2.2"
       }
     ]
   },
