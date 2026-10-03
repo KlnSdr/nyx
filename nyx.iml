@@ -9,9 +9,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="nyx: hades:2.8-snapshot">
+      <library name="nyx: hades:2.8">
         <CLASSES>
-          <root url="jar://$USER_HOME$/.nyx/dobby/hades/2.8-snapshot/hades-2.8-snapshot.jar!/" />
+          <root url="jar://$USER_HOME$/.nyx/dobby/hades/2.8/hades-2.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
