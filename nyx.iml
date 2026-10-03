@@ -8,6 +8,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="hades-2.1" level="project" />
+    <orderEntry type="module-library">
+      <library name="nyx: hades:2.8-snapshot">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.nyx/dobby/hades/2.8-snapshot/hades-2.8-snapshot.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

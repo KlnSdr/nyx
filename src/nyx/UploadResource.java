@@ -1,7 +1,8 @@
 package nyx;
 
+import common.inject.api.RegisterFor;
 import common.logger.Logger;
-import dobby.Config;
+import dobby.IConfig;
 import dobby.annotations.Post;
 import dobby.io.HttpContext;
 import dobby.io.response.ResponseCodes;
@@ -13,10 +14,15 @@ import java.io.File;
 import java.nio.file.Files;
 import java.util.Map;
 
+@RegisterFor(UploadResource.class)
 public class UploadResource {
     private static final String BASE_PATH = "/rest/upload";
     private static final Logger LOGGER = new Logger(UploadResource.class);
-    private static final String srcDir = Config.getInstance().getString("dobby.staticContent.externalDocRoot");
+    private final String srcDir;
+
+    public UploadResource(IConfig config) {
+        srcDir = config.getString("dobby.staticContent.externalDocRoot");
+    }
 
     @PermissionCheck
     @AuthorizedOnly
